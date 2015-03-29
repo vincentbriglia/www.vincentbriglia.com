@@ -7,6 +7,7 @@ before_script:
 - npm install -g protractor
 - npm install -g karma-cli
 - npm install -g divshot-cli
+- webdriver-manager update
 - jspm config registries.github.auth $JSPM_AUTH
 - jspm install
 script:
