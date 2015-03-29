@@ -1,4 +1,4 @@
-// var capabilities = require('./sauce_labs_capabilities.js').capabilities;
+var capabilities = require('./sauce_labs_capabilities.js').capabilities;
 
 var configuration = {
   multiCapabilities: [{
@@ -17,9 +17,9 @@ var configuration = {
 };
 
 if (process.env.TRAVIS) {
-  // configuration.multiCapabilities = Object.keys(capabilities).map(function (key) {
-  //   return capabilities[key];
-  // });
+  configuration.multiCapabilities = Object.keys(capabilities).map(function (key) {
+    return capabilities[key];
+  });
   configuration.sauceUser = process.env.SAUCE_USERNAME;
   configuration.sauceKey = process.env.SAUCE_ACCESS_KEY;
 } else {
