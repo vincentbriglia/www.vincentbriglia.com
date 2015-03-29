@@ -11,13 +11,13 @@ before_script:
   - jspm install
 script:
   - karma start karma.conf.js --single-run
-  - divshot push development -t $DIVSHOT_KEY
+  - divshot push development -t $DIVSHOT_AUTH
   - protractor --baseUrl='http://development.vincentbriglia.divshot.io/' protractor.conf.js
   - jspm bundle app/bootstrap www/bundle/$(date +%s | sha256sum | base64 | head -c30; echo).js --inject --minify
   - gulp build-index
   - rm -rf www/app
   - rm www/config.js
-  - divshot push staging -t $DIVSHOT_KEY
+  - divshot push staging -t $DIVSHOT_AUTH
   - protractor --baseUrl='http://staging.vincentbriglia.divshot.io/' protractor.conf.js
 after_success:
-  - divshot promote staging production -t $DIVSHOT_KEY
+  - divshot promote staging production -t $DIVSHOT_AUTH
