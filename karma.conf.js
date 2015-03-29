@@ -1,5 +1,4 @@
 var pkg = require('./package.json');
-var capabilities = require('./sauce_labs_capabilities.js').capabilities;
 
 module.exports = function (config) {
     var configuration = {
@@ -67,13 +66,13 @@ module.exports = function (config) {
         singleRun: false
     };
 
-    if (process.env.TRAVIS) {
-        configuration.customLaunchers = capabilities;
-        configuration.browsers = Object.keys(capabilities);
-        configuration.sauceLabs = {
-            testName: pkg.name + ' unit test'
-        };
-    }
+    // if (process.env.TRAVIS) {
+    //     configuration.customLaunchers = capabilities;
+    //     configuration.browsers = Object.keys(capabilities);
+    //     configuration.sauceLabs = {
+    //         testName: pkg.name + ' unit test'
+    //     };
+    // }
 
     config.set(configuration);
 };
