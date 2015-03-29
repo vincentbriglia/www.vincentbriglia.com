@@ -1,23 +1,27 @@
 language: node_js
 sudo: false
 node_js:
-  - '0.12'
+- '0.12'
 before_script:
-  - npm install -g jspm
-  - npm install -g protractor
-  - npm install -g karma-cli
-  - npm install -g divshot-cli
-  - jspm config endpoints.github.auth $JSPM_AUTH
-  - jspm install
+- npm install -g jspm
+- npm install -g protractor
+- npm install -g karma-cli
+- npm install -g divshot-cli
+- jspm config endpoints.github.auth $JSPM_AUTH
+- jspm install
 script:
-  - karma start karma.conf.js --single-run
-  - divshot push development -t $DIVSHOT_AUTH
-  - protractor --baseUrl='http://development.vincentbriglia.divshot.io/' protractor.conf.js
-  - jspm bundle app/bootstrap www/bundle/$(date +%s | sha256sum | base64 | head -c30; echo).js --inject --minify
-  - gulp build-index
-  - rm -rf www/app
-  - rm www/config.js
-  - divshot push staging -t $DIVSHOT_AUTH
-  - protractor --baseUrl='http://staging.vincentbriglia.divshot.io/' protractor.conf.js
+- karma start karma.conf.js --single-run
+- divshot push development -t $DIVSHOT_AUTH
+- protractor --baseUrl='http://development.vincentbriglia.divshot.io/' protractor.conf.js
+- jspm bundle app/bootstrap www/bundle/$(date +%s | sha256sum | base64 | head -c30;
+  echo).js --inject --minify
+- gulp build-index
+- rm -rf www/app
+- rm www/config.js
+- divshot push staging -t $DIVSHOT_AUTH
+- protractor --baseUrl='http://staging.vincentbriglia.divshot.io/' protractor.conf.js
 after_success:
-  - divshot promote staging production -t $DIVSHOT_AUTH
+- divshot promote staging production -t $DIVSHOT_AUTH
+env:
+  global:
+    secure: VmCZM38XiLVK9gSpqQPm+EDsp7xlUvv8mb01kc+Gm0k7nAc/GvdTXnTqfohv1PWGHlszD/T8kZ/UgfnamNFVvlAfrXkPlMCO2Fbn7+Y7JJh/gsRFl0UxELu1him0P5JdcWe3rh6kzxPrWOMQ8HXeod/Azd9uVa94aAMuwriz0E4=

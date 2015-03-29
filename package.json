@@ -36,6 +36,10 @@
       "angular-mocks": "github:angular/bower-angular-mocks@1.3.x",
       "css": "github:systemjs/plugin-css@0.1.x",
       "text": "github:systemjs/plugin-text@0.0.x"
+    },
+    "devDependencies": {
+      "babel": "npm:babel@^4.7.16",
+      "babel-runtime": "npm:babel-runtime@^4.7.16"
     }
   }
 }
