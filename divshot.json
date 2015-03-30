@@ -1,6 +1,6 @@
 {
 	"name": "vincentbriglia",
-	"root": "www",
+	"root": "lib",
 	"routes": {
 		"**": "index.html"
 	},
