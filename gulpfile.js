@@ -7,7 +7,7 @@ cachebust = new $.cachebust;
 
 var startServer = function () {
   return new Promise(function (fulfil) {
-    gulp.src('./www')
+    gulp.src('./lib')
       .pipe($.webserver({
         port: 9000,
         livereload: true,
@@ -24,14 +24,14 @@ gulp.task('default',
 );
 
 gulp.task('bust-config', function () {
-  return gulp.src('www/config.js')
+  return gulp.src('lib/config.js')
     .pipe(cachebust.resources())
     .pipe($.uglify())
-    .pipe(gulp.dest('www'));
+    .pipe(gulp.dest('lib'));
 });
 
 gulp.task('build-index', ['bust-config'], function () {
-  return gulp.src('www/index.html')
+  return gulp.src('lib/index.html')
     .pipe(cachebust.references())
     .pipe($.htmlmin({
       collapseWhitespace: true,
@@ -42,7 +42,7 @@ gulp.task('build-index', ['bust-config'], function () {
       removeEmptyAttributes: true,
       removeComments: true
     }))
-    .pipe(gulp.dest('www'));
+    .pipe(gulp.dest('lib'));
 });
 
 /**

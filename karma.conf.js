@@ -2,6 +2,11 @@ var pkg = require('./package.json');
 var capabilities = require('./sauce_labs_capabilities.js').capabilities;
 
 module.exports = function (config) {
+
+    function normalizationBrowserName(browser) {
+        return browser.toLowerCase().split(/[ /-]/)[0];
+    }
+
     var configuration = {
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -9,38 +14,64 @@ module.exports = function (config) {
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-        frameworks: ['jspm', 'mocha', 'chai'],
-
-        jspm: {
-            // Edit this to your needs
-            loadFiles: ['www/app/**/*.spec.js'],
-            serveFiles: [
-                'www/app/**/*.js',
-                'www/app/**/*.css'
-            ]
-        },
-
-        proxies: {
-            '/base/jspm_packages/': '/base/www/jspm_packages/'
-        },
-
-        // list of files / patterns to load in the browser
-        files: [
-            'node_modules/phantomjs-polyfill/bind-polyfill.js'
+        frameworks: [
+            'jspm',
+            'mocha',
+            'chai'
         ],
 
+        // list of files / patterns to load in the browser
+        // mostly empty because we will load our files via JSPM
+        // except for this polyfill for phantomJS
+        files: [
+            'node_modules/karma-babel-preprocessor/node_modules/babel-core/browser-polyfill.js',
+            'node_modules/phantomjs-polyfill/bind-polyfill.js'
+        ],
 
         // list of files to exclude
         exclude: [],
 
-        // preprocess matching files before serving them to the browser
+        jspm: {
+            // Edit this to your needs
+            loadFiles: [
+                'lib/test-unit/**/*.js'
+            ],
+            serveFiles: [
+                'lib/app/**'
+            ],
+            config: 'lib/config.js',
+            packages: 'lib/jspm_packages/'
+        },
+
+        // pre-process matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {},
+        preprocessors: {
+            'lib/test-unit/**/*.js': ['babel'],
+            'lib/app/**/*.js': ['babel', 'coverage']
+        },
+
+        // options passed to the babel-compiler
+        babelPreprocessor: {},
+
+        proxies: {
+            '/base/jspm_packages/': '/base/lib/jspm_packages/'
+        },
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['mocha'],
+        reporters: ['progress', 'coverage'],
+
+        coverageReporter: {
+            dir: './build/coverage/',
+            reporters: [{
+                type: 'text',
+                subdir: normalizationBrowserName
+            }, {
+                type: 'html',
+                subdir: normalizationBrowserName
+            }]
+        },
 
         // web server port
         port: 9876,
@@ -60,13 +91,21 @@ module.exports = function (config) {
         // enable / disable watching file and executing tests whenever any file changes
         autoWatch: true,
 
-
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         browsers: [
-            'Chrome',
-            'PhantomJS'
+            'Chrome'
         ],
+
+        // plugins: [
+        //     'karma-jspm',
+        //     'karma-mocha',
+        //     'karma-chai',
+        //     'karma-babel-preprocessor',
+        //     'karma-coverage',
+        //     'karma-chrome-launcher',
+        //     'karma-firefox-launcher'
+        // ],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
