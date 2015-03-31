@@ -15,6 +15,7 @@ System.config({
 System.config({
   "map": {
     "angular": "github:angular/bower-angular@1.3.15",
+    "angular-animate": "github:angular/bower-angular-animate@1.3.15",
     "angular-material": "github:angular/bower-material@0.8.3",
     "angular-messages": "github:angular/bower-angular-messages@1.3.15",
     "angular-mocks": "github:angular/bower-angular-mocks@1.3.15",
@@ -23,12 +24,10 @@ System.config({
     "babel": "npm:babel@4.7.16",
     "babel-runtime": "npm:babel-runtime@4.7.16",
     "css": "github:systemjs/plugin-css@0.1.9",
-    "lodash": "npm:lodash@3.6.0",
+    "json": "github:systemjs/plugin-json@0.1.0",
     "lodash/lodash": "github:lodash/lodash@3.6.0",
     "restangular": "github:mgonto/restangular@1.4.0",
     "text": "github:systemjs/plugin-text@0.0.2",
-    "traceur": "github:jmcriffey/bower-traceur@0.0.87",
-    "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87",
     "github:angular-ui/ui-router@0.2.13": {
       "angular": "github:angular/bower-angular@1.3.15"
     },

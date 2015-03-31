@@ -34,27 +34,30 @@ module.exports = function (config) {
         jspm: {
             // Edit this to your needs
             loadFiles: [
-                'lib/test-unit/**/*.js'
+                'www/app/**/*.spec.js'
             ],
             serveFiles: [
-                'lib/app/**'
+                'www/app/**/!(*.spec).js',
+                'www/app/**/!(*.e2e).js',
+                'www/app/**',
+                'www/assets/**'
             ],
-            config: 'lib/config.js',
-            packages: 'lib/jspm_packages/'
+            config: 'www/config.js',
+            packages: 'www/jspm_packages/'
         },
 
         // pre-process matching files before serving them to the browser
         // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'lib/test-unit/**/*.js': ['babel'],
-            'lib/app/**/*.js': ['babel', 'coverage']
+            'www/app/**/*.spec.js': ['babel'],
+            'www/app/**/!(*.spec|*.e2e).js': ['babel', 'coverage']
         },
 
         // options passed to the babel-compiler
         babelPreprocessor: {},
 
         proxies: {
-            '/base/jspm_packages/': '/base/lib/jspm_packages/'
+            '/base/jspm_packages/': '/base/www/jspm_packages/'
         },
 
         // test results reporter to use
@@ -63,7 +66,7 @@ module.exports = function (config) {
         reporters: ['progress', 'coverage'],
 
         coverageReporter: {
-            dir: './build/coverage/',
+            dir: './dist/coverage/',
             reporters: [{
                 type: 'text',
                 subdir: normalizationBrowserName

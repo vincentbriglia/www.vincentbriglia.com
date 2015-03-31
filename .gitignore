@@ -1,4 +1,5 @@
-/build
-/lib/jspm_packages
+/dist
+/www/jspm_packages
+/www/bundle
 /node_modules
 .divshot-cache

@@ -5,7 +5,7 @@ import 'angular-ui-router';
 import 'angular-ui-router-extras';
 import _ from 'lodash/lodash';
 import 'restangular';
-import './style.css!';
+import '../assets/stylesheets/style.css!';
 
 export let mainModule = angular.module('vb', [
 	'ngMaterial',

@@ -1,7 +1,7 @@
 var pkg = require('./package.json');
 
 module.exports.capabilities = {
-  sl_firefox: {
+  sl_chrome: {
     base: 'SauceLabs',
     browserName: 'chrome',
     platform: 'Linux',

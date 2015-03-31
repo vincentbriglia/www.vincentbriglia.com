@@ -5,7 +5,7 @@ var configuration = {
     'browserName': 'chrome'
   }],
 
-  specs: ['lib/test-e2e/*.spec.js'],
+  specs: ['www/app/**/*.e2e.js'],
 
   jasmineNodeOpts: {
     onComplete: null,
