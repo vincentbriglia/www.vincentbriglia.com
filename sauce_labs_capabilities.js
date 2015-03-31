@@ -6,7 +6,7 @@ module.exports.capabilities = {
     browserName: 'chrome',
     platform: 'Linux',
     version: '38',
-    name: pkg.name + " (build: " + process.env.TRAVIS_BUILD_NUMBER + ")"
+    name: pkg.name + ' (build: ' + process.env.TRAVIS_BUILD_NUMBER + ')'
   }
   // sl_ios_safari: {
   //   base: 'SauceLabs',

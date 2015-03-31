@@ -3,7 +3,7 @@ import 'angular-mocks';
 import {
   mainModule
 }
-from '../app/main';
+from './main';
 
 describe('HomeController', function () {
   beforeEach(angular.mock.module(mainModule.name));
@@ -19,7 +19,9 @@ describe('HomeController', function () {
     var controller = $controller('HomeController', {
       $scope: scope
     });
-    expect(scope.user).to.not.be.empty();
-    expect(scope.user).to.have.property('title');
+
+    should.exist(scope.user);
+    expect(scope.user.title).to.equal('Developer');
+
   });
 });

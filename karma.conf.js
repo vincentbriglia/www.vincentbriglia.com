@@ -37,8 +37,6 @@ module.exports = function (config) {
                 'www/app/**/*.spec.js'
             ],
             serveFiles: [
-                'www/app/**/!(*.spec).js',
-                'www/app/**/!(*.e2e).js',
                 'www/app/**',
                 'www/assets/**'
             ],

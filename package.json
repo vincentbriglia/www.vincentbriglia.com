@@ -17,6 +17,7 @@
     "karma-mocha": "^0.1.10",
     "karma-mocha-reporter": "^1.0.2",
     "karma-phantomjs-launcher": "^0.1.4",
+    "karma-sauce-launcher": "^0.2.10",
     "mocha": "^2.2.1",
     "mochai": "^0.2.5",
     "phantomjs-polyfill": "0.0.1",
