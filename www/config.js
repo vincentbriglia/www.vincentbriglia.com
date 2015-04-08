@@ -26,6 +26,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.9",
     "json": "github:systemjs/plugin-json@0.1.0",
     "lodash/lodash": "github:lodash/lodash@3.6.0",
+    "md": "github:guybedford/system-md@0.0.1",
     "restangular": "github:mgonto/restangular@1.4.0",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:angular-ui/ui-router@0.2.13": {
@@ -45,6 +46,9 @@ System.config({
       "angular-animate": "github:angular/bower-angular-animate@1.3.15",
       "angular-aria": "github:angular/bower-angular-aria@1.3.15",
       "css": "github:systemjs/plugin-css@0.1.9"
+    },
+    "github:guybedford/system-md@0.0.1": {
+      "showdown": "github:showdownjs/showdown@0.3.4"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"

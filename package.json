@@ -1,6 +1,9 @@
 {
   "name": "www.vincentbriglia.com",
-  "repository": "vincentbriglia/www.vincentbriglia.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vincentbriglia/www.vincentbriglia.com"
+  },
   "devDependencies": {
     "chai": "^2.2.0",
     "gulp": "^3.8.11",
@@ -23,7 +26,8 @@
     "mochai": "^0.2.5",
     "phantomjs-polyfill": "0.0.1",
     "promise": "^6.1.0",
-    "sinon": "^1.14.1"
+    "sinon": "^1.14.1",
+    "semantic-release": "^3.0.4"
   },
   "jspm": {
     "directories": {
@@ -48,5 +52,10 @@
       "babel": "npm:babel@^4.7.16",
       "babel-runtime": "npm:babel-runtime@^4.7.16"
     }
+  },
+  "version": "0.0.0-semantically-released",
+  "scripts": {
+    "prepublish": "semantic-release pre",
+    "postpublish": "semantic-release post"
   }
 }

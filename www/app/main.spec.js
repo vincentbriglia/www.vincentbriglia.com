@@ -15,10 +15,12 @@ describe('HomeController', function () {
   }));
 
   it('user should not be empty', function () {
-    var scope = {};
-    var controller = $controller('HomeController', {
-      $scope: scope
-    });
+    var scope = {},
+      controller;
+
+    controller = $controller('HomeController', {
+        $scope: scope
+      });
 
     should.exist(scope.user);
     expect(scope.user.title).to.equal('Developer');
