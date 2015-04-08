@@ -1,9 +1,6 @@
 import 'angular';
 import 'angular-mocks';
-import {
-  mainModule
-}
-from './main';
+import { mainModule } from './main';
 
 describe('HomeController', function () {
   beforeEach(angular.mock.module(mainModule.name));

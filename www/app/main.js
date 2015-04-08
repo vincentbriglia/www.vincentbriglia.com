@@ -1,19 +1,14 @@
 import 'angular';
 import 'angular-material';
 import 'angular-messages';
-import 'angular-ui-router';
-import 'angular-ui-router-extras';
 import _ from 'lodash/lodash';
 import 'restangular';
 import '../assets/stylesheets/style.css!';
-import '../assets/test.md!md';
 
 export let mainModule = angular.module('vb', [
   'ngMaterial',
   'ngMessages',
-  'restangular',
-  'ui.router',
-  'ct.ui.router.extras'
+  'restangular'
 ]);
 
 mainModule.controller('HomeController', ['$scope', function ($scope) {
