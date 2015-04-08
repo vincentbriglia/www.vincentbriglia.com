@@ -1,20 +1,19 @@
-var capabilities = require('./sauce_labs_capabilities.js').capabilities;
+var capabilities = require('./sauce_labs_capabilities.js').capabilities,
+  configuration = {
+    multiCapabilities: [{
+      'browserName': 'chrome'
+    }],
 
-var configuration = {
-  multiCapabilities: [{
-    'browserName': 'chrome'
-  }],
+    specs: ['www/app/**/*.e2e.js'],
 
-  specs: ['www/app/**/*.e2e.js'],
-
-  jasmineNodeOpts: {
-    onComplete: null,
-    isVerbose: true,
-    showColors: true,
-    includeStackTrace: true,
-    defaultTimeoutInterval: 360000
-  },
-};
+    jasmineNodeOpts: {
+      onComplete: null,
+      isVerbose: true,
+      showColors: true,
+      includeStackTrace: true,
+      defaultTimeoutInterval: 360000
+    }
+  };
 
 if (process.env.TRAVIS) {
   configuration.multiCapabilities = Object.keys(capabilities).map(function (key) {

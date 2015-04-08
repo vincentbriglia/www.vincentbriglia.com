@@ -5,7 +5,7 @@ var Promise = require('promise'),
 
 cachebust = new $.cachebust;
 
-var startServer = function () {
+function startServer() {
   return new Promise(function (fulfil) {
     gulp.src('./www')
       .pipe($.webserver({
