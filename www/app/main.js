@@ -14,6 +14,10 @@ export let mainModule = angular.module('vb', [
   'restangular'
 ]);
 
+mainModule.controller('HomeController', ['$scope', function ($scope) {
+
+}]);
+
 // mainModule.controller('HomeController', ['$scope', function ($scope) {
 //   $scope.user = {
 //     title: 'Developer',
