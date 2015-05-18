@@ -11,5 +11,6 @@
 		"/bundle/**": 31536000,
 		"/config*": 31536000,
 		"/": false
-	}
+	},
+  "prerender": true
 }
