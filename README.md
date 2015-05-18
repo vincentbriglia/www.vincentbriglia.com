@@ -1,15 +1,15 @@
 vincentbriglia.com
 ======================
 
+[![Build Status](https://travis-ci.org/vincentbriglia/node-emerchantpay.svg?branch=master)](https://travis-ci.org/vincentbriglia/node-emerchantpay)
+[![Dependency Status](https://gemnasium.com/vincentbriglia/node-emerchantpay.svg)](https://gemnasium.com/vincentbriglia/node-emerchantpay)
+
 ## Features
 
   * Use ES6 with Angular 1.3
   * Use ES6 Modules via SystemJS and ES6 Module Loader Polyfill
   * Manage development and production workflow with JSPM, SystemJS builder and Gulp
-  * Unit tests using mocha
-  * e2e tests using protractor & selenium
-  * TravisCI and Sauce Labs integration
-  
+
 ## Installation
 
 ### Pre-Requirements
@@ -42,8 +42,50 @@ $ sudo webdriver-manager update
 
 ## Additional Configuration
 
+### Travis CI integration
+
+in order to add your encrypted keys you have to install the travis cli
+
+below is a crude explanation, if it makes no sense, please go to [the official guide](https://github.com/jspm/jspm-cli/wiki/Registries) for jspm registries
+
+```bash
+$ gem install travis
+$ travis login
+```
+
+#### Divshot
+
+in order to add the DIVSHOT key you have to do
+
+```bash
+$ sudo npm install -g divshot-cli
+$ travis encrypt DIVSHOT_AUTH="$(divshot auth:token)" --add
+```
+
+#### Github
+
+if you're running off of a private repository from github
+
+```bash
+$ jspm registry config github
+```
+enter your credentials
+
+```bash
+$ jspm registry export github
+```
+from that output, copy the key after registries.github.auth
+```bash
+$ travis encrypt JSPM_AUTH=COPYHERE --add
+```
+
+
+
+
 Todo
 
-  * jspm configra
+  * jspm configuration
   * travis configuration & local rubygem for secure hash generation
-
+  * Unit tests using mocha
+  * e2e tests using protractor & selenium
+  * Sauce Labs integration
