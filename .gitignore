@@ -3,4 +3,4 @@
 /www/bundle
 /node_modules
 .divshot-cache
-.npm-debug.log
+npm-debug.log

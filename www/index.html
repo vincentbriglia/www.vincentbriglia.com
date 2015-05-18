@@ -3,15 +3,41 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-
     <style>
       [ng-cloak] {
         display: none;
+      }
+      body, html {
+        height: 100%;
+      }
+      .Aligner {
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+      }
+      .Aligner-item {
+        font-weight: 500;
+        max-width: 50%;
+        line-height: 32px;
+        text-transform: uppercase;
+      }
+
+      .Aligner-item span {
+        padding: 5px;
+        background-color: #0084D1;
+        color: #FFF;
       }
     </style>
   </head>
   <body data-main-app ng-cloak>
 
+    <div class="Aligner">
+      <div class="Aligner-item">Vincent Briglia <span>full-stack web developer</span></div>
+    </div>
+
+
+<!--
     <div layout="row">
       <div layout="column" tabIndex="-1" role="main" flex>
         <md-toolbar layout="row">
@@ -21,12 +47,12 @@
             </h3>
           </div>
         </md-toolbar>
-      </div>  
+      </div>
     </div>
 
     <div layout="row" layout-margin layout-fill layout-padding>
       <div flex>
-        
+
         <md-content>
 
           <form name="userForm">
@@ -95,6 +121,8 @@
       </div>
       <div flex></div>
     </div>
+ -->
+
 
 
     <script src="jspm_packages/system.js"></script>

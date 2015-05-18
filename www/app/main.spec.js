@@ -11,16 +11,16 @@ describe('HomeController', function () {
     $controller = _$controller_;
   }));
 
-  it('user should not be empty', function () {
-    var scope = {},
-      controller;
+  // it('user should not be empty', function () {
+  //   var scope = {},
+  //     controller;
 
-    controller = $controller('HomeController', {
-        $scope: scope
-      });
+  //   controller = $controller('HomeController', {
+  //       $scope: scope
+  //     });
 
-    should.exist(scope.user);
-    expect(scope.user.title).to.equal('Developer');
+  //   should.exist(scope.user);
+  //   expect(scope.user.title).to.equal('Developer');
 
-  });
+  // });
 });
