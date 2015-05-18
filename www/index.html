@@ -7,35 +7,22 @@
       [ng-cloak] {
         display: none;
       }
-      body, html {
-        height: 100%;
-      }
-      .Aligner {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-      }
-      .Aligner-item {
-        font-weight: 500;
-        max-width: 50%;
-        line-height: 32px;
-        text-transform: uppercase;
-      }
-
-      .Aligner-item span {
-        padding: 5px;
-        background-color: #0084D1;
-        color: #FFF;
-      }
     </style>
   </head>
   <body data-main-app ng-cloak>
 
-    <div class="Aligner">
-      <div class="Aligner-item">Vincent Briglia <span>full-stack web developer</span></div>
+    <div id='main' layout='row' layout-align='center center' layout-wrap>
+      <div flex>
+        <div layout='column' layout-padding layout-align='center end' layout-wrap>
+          <div>Vincent Briglia</div>
+        </div>
+      </div>
+      <div flex>
+        <div layout='column' layout-padding layout-align='center' layout-wrap>
+          <div><span>full-stack web developer</span></div>
+        </div>
+      </div>
     </div>
-
 
 <!--
     <div layout="row">
