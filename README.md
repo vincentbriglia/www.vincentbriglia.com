@@ -1,8 +1,8 @@
 vincentbriglia.com
 ======================
 
-[![Build Status](https://travis-ci.org/vincentbriglia/node-emerchantpay.svg?branch=master)](https://travis-ci.org/vincentbriglia/node-emerchantpay)
-[![Dependency Status](https://gemnasium.com/vincentbriglia/node-emerchantpay.svg)](https://gemnasium.com/vincentbriglia/node-emerchantpay)
+[![Build Status](https://travis-ci.org/vincentbriglia/www.vincentbriglia.com.svg?branch=master)](https://travis-ci.org/vincentbriglia/www.vincentbriglia.com)
+[![Dependency Status](https://gemnasium.com/vincentbriglia/www.vincentbriglia.com.svg)](https://gemnasium.com/vincentbriglia/www.vincentbriglia.com)
 
 ## Features
 
