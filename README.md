@@ -1,6 +1,8 @@
 vincentbriglia.com
 ======================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/vincentbriglia/www.vincentbriglia.com.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/vincentbriglia/www.vincentbriglia.com.svg?branch=master)](https://travis-ci.org/vincentbriglia/www.vincentbriglia.com)
 [![Dependency Status](https://gemnasium.com/vincentbriglia/www.vincentbriglia.com.svg)](https://gemnasium.com/vincentbriglia/www.vincentbriglia.com)
 
